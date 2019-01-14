@@ -1,0 +1,33 @@
+server:
+    tomcat:
+      uri-encoding: UTF-8
+    port: 8080
+spring:
+    #mysql数据库配置
+    datasource:
+        url:jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8&serverTimezone=GMT
+        username:root
+        password:asp_10010
+    jpa:
+      database: mysql
+      show-sql: true
+      #hibernate ddl auto(validate create  create drop  update)
+      hibernate:
+        ddl-auto: update
+        naming-strategy:org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          dialect:org.hibernate.dialect.MySQL5Dialect
+    #redis 数据库配置
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: ""
+      #database 1
+      database: 0
+      jedis:
+        pool:
+          max-active: 10000
+          max-idle: 10000
+          max-wait: -1
+          min-idle: 0
